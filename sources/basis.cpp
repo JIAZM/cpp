@@ -63,6 +63,10 @@ class stu{	//类 - 也是一种自定义的数据类型
 			//cout<<"name = "<<name<<endl;
 			//cout<<"math = "<<math<<endl;
 		}
+		~stu()	//析构函数, 函数名与类名相同且前面带有波浪线, 没有参数和返回值，没有return语句，一不能重载, 一个类只能有一个析构函数
+		{
+			cout<<"destruct function"<<endl;
+		}
 
 		void B();	//函数在类内声明，在类外实现
 };
@@ -105,5 +109,6 @@ int main(int argc, char *argv[])
 	cout<<"sizeof(s2) = "<<sizeof(s2)<<endl;
 
 
-	exit(0);
+	//exit(0);
+	return 0;
 }
