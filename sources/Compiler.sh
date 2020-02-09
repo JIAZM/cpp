@@ -20,7 +20,7 @@ $CC $name.$attr -o released/$name
 
 if [ $? -eq 0 ] ; then
 	echo Compile success;
-	echo Compiled file moved to floder \[compiled\]
+	echo Compiled file moved to floder \[released/$name\]
 else
 	echo Compile fault;
 fi
