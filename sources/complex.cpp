@@ -26,6 +26,10 @@ class A{
 			cout<<"A Destructor function called"<<endl;
 			cout<<"this : "<<this<<endl;
 		}
+		void print(){
+			cout<<"x : "<<x<<endl;
+			cout<<"y : "<<y<<endl;
+		}
 };
 
 class B{
@@ -33,7 +37,9 @@ class B{
 		int z;
 		A a;
 	public:
-		B(int z1 = 2){
+		B(int z1 = 2):a(200, 300){	//在B的初始化列表中可以指定调用A的构造函数进行初始化
+		//B(int x1, int y1, z1):a(x1, y1)	另一种写法，使用初始化列表对复合结构进行初始化
+		//创建对象时使用 B b(100, 200, 300)	即可
 			z = z1;
 			cout<<"B Constructor function called"<<endl;
 			cout<<"this : "<<this<<endl;
@@ -43,11 +49,22 @@ class B{
 			cout<<"B Destructor function called"<<endl;
 			cout<<"this : "<<this<<endl;
 		}
+		void print_b(){
+			cout<<"print_b()"<<endl;
+			cout<<"z : "<<z<<endl;
+		}
+		void print_a(){
+			cout<<"print_a()"<<endl;
+			a.print();
+		}
 };
 
 int main(int argc, char *argv[])
 {
 	B b;
+
+	b.print_b();
+	b.print_a();
 
 	return 0;
 }
