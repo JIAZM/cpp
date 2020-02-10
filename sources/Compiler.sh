@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# Compiler script
+
 name=`echo $1 | awk -F "." '{print $1}'`
 attr=`echo $1 | awk -F "." '{print $2}'`
 
